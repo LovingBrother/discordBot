@@ -4,7 +4,7 @@ const client = new Client({intents: [GatewayIntentBits.Guilds, GatewayIntentBits
 
 client.on("ready", (x) => {
     console.log(`${x.user.tag} is ready!`);
-    client.user.setActivity('Subsrcibe to Tolu');
+    client.user.setActivity('Subsrcibe to wareBooks');
 
     const ping = new SlashCommandBuilder()
     .setName ('ping')
@@ -21,7 +21,7 @@ client.on("ready", (x) => {
     client.application.commands.create(ping);
     client.application.commands.create(hello);
     client.application.commands.create(bye);
-});
+})
 
 client.on('interactionCreate', (interaction) =>{
     if(!interaction.isChatInputCommand()) return;
@@ -29,11 +29,11 @@ client.on('interactionCreate', (interaction) =>{
         interaction.reply('Pong!');
     }
     if(interaction.commandName==='hello') {
-        interaction.reply('Hello!');
+        interaction.reply('Hi!');
     }
-    if(interaction.commandName==='hello') {
-        interaction.reply('Hello!');
-    }
+    if(interaction.commandName==='bye') {
+        interaction.reply('Thank you putting me to use, see you someother time!');
+    };
 
 });
 
